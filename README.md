@@ -14,16 +14,17 @@ Clone this repository:
 git clone https://github.com/ai-awesome/skill-publish.git
 ```
 
-Then install the skill from the local path:
+Then symlink the skill into your Claude global config directory:
 
 ```sh
-claude mcp add-skill /path/to/skill-publish
+mkdir -p ~/.claude/skills/publish
+ln -sf "$(pwd)/skill-publish/SKILL.md" ~/.claude/skills/publish/SKILL.md
 ```
 
-Or install directly from the remote URL:
+Or add directly as a submodule in your dotfiles:
 
 ```sh
-claude mcp add-skill https://github.com/ai-awesome/skill-publish
+git submodule add https://github.com/ai-awesome/skill-publish.git ~/.claude/skills/publish
 ```
 
 ## Customization
